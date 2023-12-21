@@ -1,4 +1,4 @@
-import { getCurrentuser } from "@/lib/appwrite/api";
+import { getCurrentUser } from "@/lib/appwrite/api";
 import { IContextType, IUser } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const checkAuthUser = async () => {
     try {
-      const currentAccount = await getCurrentuser();
+      const currentAccount = await getCurrentUser();
 
       if (currentAccount) {
         setUser({
