@@ -1,3 +1,8 @@
+import { useUserContext } from "@/context/AuthContext";
+import {
+  useDeleteSavedPost,
+  useLikePost,
+} from "@/lib/react-query/queriesAndMutations";
 import { Models } from "appwrite";
 
 type PostStatsProps = {
@@ -6,8 +11,11 @@ type PostStatsProps = {
 };
 
 const PostStats = ({ post, userId }: PostStatsProps) => {
+  const { mutate: likePost } = useLikePost();
+  const { mutate: savePost } = useLikePost();
+  const { mutate: deleteSavedPost } = useDeleteSavedPost();
+  const { data: currentUser } = useUserContext();
 
-    
   return (
     <div className="flex justify-between items-center z-20 mt-2">
       <div className="flex gap-2 content-center justify-center items-center">
@@ -17,11 +25,10 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
           width={20}
           height={20}
           onClick={() => {}}
-          className="cursor-pointer" 
+          className="cursor-pointer"
         />
         <p className="small-medium lg:base-medium text-light-3">3</p>
       </div>
-
 
       <div className="flex gap-2 content-center justify-center items-center">
         <img
