@@ -188,7 +188,7 @@
 
   /* Bottom bar */
   .bottom-bar {
-    @apply z-50 flex-between w-full fixed bottom-0 rounded-t-[20px] bg-dark-2 px-6 py-3 md:hidden;
+    @apply z-50 flex-between w-full fixed bottom-0 rounded-t-[20px] bg-dark-2 px-6 py-3 md:hidden backdrop-saturate-100 backdrop-blur-2xl bg-transparent;
   }
 
   /* File uploader */
@@ -219,7 +219,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2 border border-dark-4;
   }
 
   .leftsidebar-link {
@@ -232,12 +232,12 @@
   }
 
   .post-card_img {
-    @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[24px] object-cover mb-5;
+    @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[20px] object-cover mb-5;
   }
 
   /* Topbar */
   .topbar {
-    @apply sticky top-0 z-50 md:hidden bg-dark-2 w-full;
+    @apply sticky top-0 z-50 md:hidden bg-dark-2 w-full border border-dark-4 backdrop-saturate-100 backdrop-blur-md bg-transparent;
   }
 
   /* User card */

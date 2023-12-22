@@ -43,6 +43,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           bio: currentAccount.bio,
         });
 
+        //change this if you get error
+        document.cookie = `authToken=${currentAccount.token}; SameSite=None; Secure`;
+
         setIsAuthenticated(true);
         return true;
       }
