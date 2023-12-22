@@ -46,7 +46,7 @@ const PostCard = ({ post }: PostCardProps) => {
           <img
             src="/assets/icons/edit.svg"
             alt="edit"
-            className="lg:w-7 lg:h-7 h-5 w-5"
+            className="lg:w-6 lg:h-6 h-5 w-5"
           />
         </Link>
       </div>

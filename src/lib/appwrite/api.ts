@@ -78,7 +78,7 @@ export async function getAccount() {
 // ============================== GET USER
 export async function getCurrentUser() {
   try {
-    const currentAccount = await getAccount();
+    const currentAccount = await account.get();
 
     if (!currentAccount) throw Error;
 
@@ -93,7 +93,6 @@ export async function getCurrentUser() {
     return currentUser.documents[0];
   } catch (error) {
     console.log(error);
-    return null;
   }
 }
 
@@ -227,7 +226,7 @@ export async function likePost(postId: string, likesArray: string[]) {
 
 export async function savePost(postId: string, userId: string) {
   try {
-    const updatedPost = await databases.updateDocument(
+    const updatedPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.savesCollectionId,
       ID.unique(),
@@ -236,6 +235,7 @@ export async function savePost(postId: string, userId: string) {
         post: postId,
       }
     );
+
     if (!updatedPost) throw Error;
 
     return updatedPost;
@@ -251,9 +251,10 @@ export async function deleteSavedPost(savedRecordId: string) {
       appwriteConfig.savesCollectionId,
       savedRecordId
     );
+
     if (!statusCode) throw Error;
 
-    return { status: "ok" };
+    return { status: "Ok" };
   } catch (error) {
     console.log(error);
   }

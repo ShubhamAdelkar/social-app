@@ -29,7 +29,7 @@ const Topbar = () => {
 
         <div
           className="flex
-        gap-4"
+        gap-1"
         >
           <Button
             variant="ghost"
