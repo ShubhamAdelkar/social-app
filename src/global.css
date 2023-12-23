@@ -232,8 +232,9 @@
   }
 
   .post-card_img {
-    @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[24px] object-cover mb-5;
+    @apply h-full xs:h-[400px] lg:h-[450px] w-full rounded-[24px] object-cover mb-5 ;
   }
+
 
   /* Topbar */
   .topbar {
