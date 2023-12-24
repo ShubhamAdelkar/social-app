@@ -1,20 +1,36 @@
 import { Input } from "@/components/ui/input";
 import GridPostList from "@/components/ui/shared/GridPostList";
+import Loader from "@/components/ui/shared/Loader";
 import SearchResults from "@/components/ui/shared/SearchResults";
+import useDebounce from "@/hooks/useDebounce";
+import {
+  useGetPosts,
+  userSearchPosts,
+} from "@/lib/react-query/queriesAndMutations";
 import { useState } from "react";
 
 const Explore = () => {
+  const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
   const [searchValue, setSearchValue] = useState("");
+  const debounceValue = useDebounce(searchValue, 500);
+  const { data: searchedPosts, isFetching: isSearchFetching } =
+    userSearchPosts(debounceValue);
 
-  // const posts = [];
+  if (!posts) {
+    return (
+      <div className="flex-center w-full h-full">
+        <Loader />
+      </div>
+    );
+  }
 
-  // const shouldShowSearchResults = searchValue !== "";
-  // const shouldShowPosts =
-  //   !shouldShowSearchResults &&
-  //   posts.pages.every((item) => item.documents.length === 0);
+  const shouldShowSearchResults = searchValue !== "";
+  const shouldShowPosts =
+    !shouldShowSearchResults &&
+    posts.pages.every((item) => item.documents.length === 0);
 
   return (
-    <div className="explore-container">
+    <div className="explore-container mb-14 lg:mb-0">
       <div className="explore-inner_container">
         <h2 className="h3-bold md:h2-bold w-full">Explore</h2>
         <div className="flex gap-1 px-4 w-full rounded-lg bg-dark-4">
@@ -48,9 +64,12 @@ const Explore = () => {
         </div>
       </div>
 
-      {/* <div className="flex flex-wrap gap-8 w-full max-w-5xl">
+      <div className="flex flex-wrap gap-8 w-full max-w-5xl">
         {shouldShowSearchResults ? (
-          <SearchResults />
+          <SearchResults
+            isSearchFetching={isSearchFetching}
+            searchedPosts={searchedPosts}
+          />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : (
@@ -58,7 +77,7 @@ const Explore = () => {
             <GridPostList key={`page-${index}`} posts={item.documents} />
           ))
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
