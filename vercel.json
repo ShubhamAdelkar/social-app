@@ -1,6 +1,5 @@
 {
   "build": {
-    "command": "npm run build",
     "ignore": ["node_modules"]
   },
   "outputDirectory": "dist"
