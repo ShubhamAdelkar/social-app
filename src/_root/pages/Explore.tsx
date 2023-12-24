@@ -58,7 +58,6 @@ const Explore = () => {
       </div>
       <div className="flex-between w-full max-w-5xl mt-8 mb-7 lg:mt-14">
         <h2 className="body-bold md:h3-bold">Popular Today</h2>
-
         <div className="flex-center gap-2 bg-dark-3 rounded-xl px-3.5 py-1.5 cursor-pointer">
           <p className="small-medium md:base-medium text-light-2">All</p>
           <img
@@ -68,6 +67,7 @@ const Explore = () => {
             height={18}
           />
         </div>
+        im working on this
       </div>
 
       {/* <div className="flex flex-wrap gap-8 w-full max-w-5xl">
