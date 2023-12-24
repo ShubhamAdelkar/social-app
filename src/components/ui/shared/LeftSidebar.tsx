@@ -67,7 +67,7 @@ const LeftSidebar = () => {
                       isActive && "invert-white"
                     } `}
                   />
-                  {link.label}
+                  {link.label} 
                 </NavLink>
               </li>
             );

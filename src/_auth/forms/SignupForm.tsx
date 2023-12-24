@@ -180,7 +180,7 @@ const SignupForm = () => {
                 Loading...
               </div>
             ) : (
-              "Sign up"
+              <p className="base-semibold">Sign up</p>
             )}
           </Button>
           <p className="text-small-regular text-light-2 text-center m-2">
