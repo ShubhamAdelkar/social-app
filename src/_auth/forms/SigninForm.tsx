@@ -69,7 +69,7 @@ const SigninForm = () => {
           Log in to your account
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! enter your details.
+          Welcome! enter your details.
         </p>
 
         <form
@@ -132,6 +132,9 @@ const SigninForm = () => {
             >
               Sign up
             </Link>
+          </p>
+          <p className="small-medium text-light-4 text-center bottom-0">
+            by imbachhu ❤️
           </p>
         </form>
       </div>

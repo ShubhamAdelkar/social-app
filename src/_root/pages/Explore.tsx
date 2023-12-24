@@ -67,7 +67,6 @@ const Explore = () => {
             height={18}
           />
         </div>
-        im working on this.
       </div>
 
       {/* <div className="flex flex-wrap gap-8 w-full max-w-5xl">
@@ -89,6 +88,7 @@ const Explore = () => {
           <Loader />
         </div>
       )} */}
+      <p className="text-light-3">im working on this</p>
     </div>
   );
 };

@@ -185,6 +185,9 @@ const SignupForm = () => {
               Log in
             </Link>
           </p>
+          <p className="small-medium text-light-4 text-center bottom-0">
+            by imbachhu ❤️
+          </p>
         </form>
       </div>
     </Form>
