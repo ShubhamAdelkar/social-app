@@ -1,5 +1,4 @@
 import {
-  useInfiniteQuery,
   useMutation,
   useQuery,
   useQueryClient,
@@ -11,7 +10,6 @@ import {
   deleteSavedPost,
   getCurrentUser,
   getGetRecentPosts,
-  getInfinitePosts,
   getPostById,
   likePost,
   savePost,
@@ -167,23 +165,26 @@ export const useDeletePost = () => {
   });
 };
 
-export const useGetPosts = () => {
-  return useInfiniteQuery({
-    queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-    queryFn: getInfinitePosts,
-    getNextPageParam: (lastPage) => {
-      if (lastPage && lastPage.documents.length === 0) return null;
+// export const useGetPosts = () => {
+//   return useInfiniteQuery({
+//     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+//     queryFn: getInfinitePosts,
+//     getNextPageParam: (lastPage) => {
+//       if (lastPage && lastPage.documents.length === 0) return null;
 
-      const lastId = lastPage?.documents[lastPage?.documents.length - 1].$id;
+//       // Extract a number for the last ID, or return null/undefined if not applicable
+//       const lastId =
+//         lastPage?.documents?.[lastPage.documents.length - 1]?.$id?.toString() ||
+//         null;
 
-      return lastId;
-    },
-  });
-};
+//       return lastId;
+//     },
+//   });
+// };
 
 export const userSearchPosts = (searchTerm: string) => {
   return useQuery({
-    queryKey: [QUERY_KEYS.SEARCH_POSTS, searchTerm],
+    queryKey: [QUERY_KEYS.SEARCH_POSTS, searchPosts],
     queryFn: () => searchPosts(searchTerm),
     enabled: !!searchTerm,
   });
