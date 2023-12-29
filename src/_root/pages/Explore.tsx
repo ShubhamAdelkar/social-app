@@ -88,7 +88,7 @@ const Explore = () => {
           <Loader />
         </div>
       )} */}
-      <p className="text-light-3">im working on this</p>
+      <p className="text-light-3">This is a beta version</p>
     </div>
   );
 };

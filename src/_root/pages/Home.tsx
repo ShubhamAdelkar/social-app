@@ -13,7 +13,7 @@ const Home = () => {
     <div className="flex flex-1">
       <div className="home-container">
         <div className="home-posts mb-20 lg:mb-0 md:mb-0">
-        <p className="font-thin text-light-2 py-0 m-0 lg:small-medium">Merry Christmas ✨</p>
+        <p className="font-thin text-light-2 py-0 m-0 lg:small-medium"></p>
           <h3 className="h3-bold md:h2-bold text-left w-full">Home Feed</h3>
           {isPostLoading && !posts ? (
             <Loader />
