@@ -29,7 +29,7 @@ const LeftSidebar = () => {
           <div className="flex flex-col">
             <h2 className="h2-bold">Photto.</h2>
             <p className="px-[2px] tiny-medium text-light-3 mt-[-4px]">
-              by imbachhu
+              by Shubham
             </p>
           </div>
         </Link>

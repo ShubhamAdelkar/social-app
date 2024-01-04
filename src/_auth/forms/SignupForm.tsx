@@ -192,7 +192,7 @@ const SignupForm = () => {
             </Link>
           </p>
           <p className="small-medium text-light-4 text-center bottom-0">
-            by imbachhu ❤️
+            by Shubham ❤️
           </p>
         </form>
       </div>
