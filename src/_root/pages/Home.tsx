@@ -16,7 +16,7 @@ const Home = () => {
           <p className="font-thin text-light-2 py-0 m-0 lg:small-medium"></p>
           <h3 className="h3-bold md:h2-bold text-left w-full">Home Feed</h3>
           <iframe
-            className="br-10"
+            className=""
             src="https://open.spotify.com/embed/playlist/6ZB0T4ZttlFzUIZt01l1HH?utm_source=generator&theme=0"
             width="86%"
             height="152"
