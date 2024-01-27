@@ -13,8 +13,18 @@ const Home = () => {
     <div className="flex flex-1">
       <div className="home-container">
         <div className="home-posts mb-20 lg:mb-0 md:mb-0">
-        <p className="font-thin text-light-2 py-0 m-0 lg:small-medium"></p>
+          <p className="font-thin text-light-2 py-0 m-0 lg:small-medium"></p>
           <h3 className="h3-bold md:h2-bold text-left w-full">Home Feed</h3>
+          <iframe
+            className="br-10"
+            src="https://open.spotify.com/embed/playlist/6ZB0T4ZttlFzUIZt01l1HH?utm_source=generator&theme=0"
+            width="86%"
+            height="152"
+            frameBorder="0"
+            // allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
           {isPostLoading && !posts ? (
             <Loader />
           ) : (

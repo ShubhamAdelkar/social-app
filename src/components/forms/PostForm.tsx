@@ -33,7 +33,6 @@ const PostForm = ({ post, action }: PostFormProps) => {
     useCreatePost();
   const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
     useUpdatePost();
-
   const { user } = useUserContext();
   const { toast } = useToast();
   const navigate = useNavigate();
