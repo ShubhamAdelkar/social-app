@@ -188,7 +188,7 @@
 
   /* Bottom bar */
   .bottom-bar {
-    @apply z-50 flex-between w-full fixed bottom-0 rounded-t-[20px] bg-dark-2 px-6 py-2 md:hidden backdrop-saturate-100 backdrop-blur-2xl bg-transparent;
+    @apply z-50 flex-between w-full fixed bottom-0 bg-dark-2 px-6 py-2 md:hidden backdrop-saturate-100 backdrop-blur-2xl bg-transparent;
   }
 
   /* File uploader */
@@ -228,11 +228,11 @@
 
   /* Post Card */
   .post-card {
-    @apply bg-dark-2 rounded-2xl border border-dark-4 p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px];
+    @apply bg-dark-2 rounded-xl border border-dark-4 p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px];
   }
 
   .post-card_img {
-    @apply  w-full rounded-[18px] object-cover mb-5 ;
+    @apply  w-full rounded-[8px] object-cover mb-5 ;
   }
 
 

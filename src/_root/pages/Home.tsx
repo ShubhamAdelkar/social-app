@@ -16,12 +16,11 @@ const Home = () => {
           <p className="font-thin text-light-2 py-0 m-0 lg:small-medium"></p>
           <h3 className="h3-bold md:h2-bold text-left w-full">Home Feed</h3>
           <iframe
-            className=""
-            src="https://open.spotify.com/embed/playlist/6ZB0T4ZttlFzUIZt01l1HH?utm_source=generator&theme=0"
-            width="86%"
-            height="152"
+            className="md:w-[86%]"
+            src="https://open.spotify.com/embed/track/26QGQmi9RoD3UWiPipJi7g?utm_source=generator"
+            width="100%"
+            height="352"
             frameBorder="0"
-            // allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
