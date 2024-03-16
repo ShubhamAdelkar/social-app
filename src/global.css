@@ -9,6 +9,10 @@
     @apply box-border list-none p-0 m-0 scroll-smooth;
   }
 
+  iframe {
+    border: none; /* Remove any default border */
+  }
+
   body {
     @apply bg-dark-1 text-white min-h-screen font-inter scroll-smooth;
   }
@@ -227,14 +231,21 @@
   }
 
   /* Post Card */
+
   .post-card {
     @apply bg-dark-2 rounded-xl border border-dark-4 p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px];
   }
-
-  .post-card_img {
-    @apply  w-full rounded-[8px] object-cover mb-5 ;
+  .placeholder-post-card {
+    @apply flex bg-dark-2 rounded-xl p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px] animate-pulse min-h-[600px] text-slate-800 items-center;
   }
 
+  .placeholder-add {
+    @apply w-full h-[352px] bg-dark-2 min-h-[352px] rounded-xl p-5 lg:p-6 max-w-screen-sm lg:w-[550px] animate-pulse;
+  }
+
+  .post-card_img {
+    @apply w-full rounded-[8px] object-cover mb-5;
+  }
 
   /* Topbar */
   .topbar {
