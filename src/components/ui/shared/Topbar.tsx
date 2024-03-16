@@ -26,7 +26,7 @@ const Topbar = () => {
           <div className="flex flex-col">
             <h2 className="h3-bold">Photto.</h2>
             <p className="px-[1px] tiny-medium text-light-3 mt-[-6px]">
-              by imbachhu
+              by Shubham
             </p>
           </div>
         </Link>
