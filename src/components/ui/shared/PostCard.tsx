@@ -1,14 +1,26 @@
 import { useUserContext } from "@/context/AuthContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { multiFormatDateString } from "@/lib/utils";
 import { Models } from "appwrite";
 import { Link } from "react-router-dom";
 import PostStats from "./PostStats";
+import { useState } from "react";
 
 type PostCardProps = {
   post: Models.Document;
 };
 
+type ReactImageEventHandler = React.SyntheticEvent<HTMLImageElement>;
+
 const PostCard = ({ post }: PostCardProps) => {
+  const [imageUrl, setImageUrl] = useState(post.imageUrl);
+
+  const handleError = (e: ReactImageEventHandler) => {
+    setImageUrl("/assets/images/side-img.jpeg");
+    (e.target as HTMLImageElement).onerror = null;
+  };
+
   const { user } = useUserContext();
   if (!post.creator) return;
 
@@ -62,11 +74,12 @@ const PostCard = ({ post }: PostCardProps) => {
             ))}
           </ul>
         </div>
-
-        <img
-          src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
+        <LazyLoadImage
+          src={imageUrl}
           alt="post-image"
-          className="post-card_img "
+          effect="blur"
+          className="post-card_img"
+          onError={handleError}
         />
       </Link>
       <p className="subtle-semibold  lg:small-regular text-light-4">
