@@ -26,9 +26,9 @@ const PostCard = ({ post }: PostCardProps) => {
 
   return (
     <div className="post-card">
-      <div className="flex-between">
+      <div className="flex-between p-4">
         <div className="flex items-center gap-3">
-          <Link to={`/profile/${post.creator.$id}`}>
+          {/* <Link to={`/profile/${post.creator.$id}`}> */}
             <img
               src={
                 post?.creator?.imageUrl ||
@@ -37,7 +37,7 @@ const PostCard = ({ post }: PostCardProps) => {
               alt="creator"
               className="rounded-full w-10 lg:h-11 lg:w-11"
             />
-          </Link>
+          {/* </Link> */}
 
           <div className="flex flex-col">
             <p className="base-medium lg:body-bold text-light-1">
@@ -64,7 +64,7 @@ const PostCard = ({ post }: PostCardProps) => {
       </div>
 
       <Link to={`/posts/${post.$id}`}>
-        <div className="small-medium lg:base-medium py-4">
+        <div className="small-medium lg:base-medium p-3 border-t border-dark-4">
           <p>{post.caption}</p>
           <ul className="flex gap-1.5">
             {post.tags.map((tag: string) => (
@@ -82,10 +82,9 @@ const PostCard = ({ post }: PostCardProps) => {
           onError={handleError}
         />
       </Link>
-      <p className="subtle-semibold  lg:small-regular text-light-4">
+      <p className="subtle-semibold  lg:small-regular text-light-4 px-3">
         {multiFormatDateString(post.$createdAt)}
       </p>
-
       <PostStats post={post} userId={user.id} />
     </div>
   );
