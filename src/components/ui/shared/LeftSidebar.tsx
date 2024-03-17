@@ -20,14 +20,14 @@ const LeftSidebar = () => {
 
   return (
     <nav className="leftsidebar">
-      <div className="flex flex-col gap-11">
-        <Link to="/" className="flex gap-3 items-center">
+      <div className="flex flex-col gap-6">
+        <Link to="/" className="flex gap-3 items-center mb-6">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNUlEQVR4nO3avYnGMBCEYVfrHlzFFuEuBCrDmQNV4MCJw73kuMyY+wHJ3DOw+cew8sy+fNNERERfmpdIE7cePK4K8+JvDNy3s+vMn7+jtDrEMLAxMG3g5gn7Bj5JiFQhUqTwqcbseqAiXRTp6hIpA5xxTrnGwLSBGxoDZy14YAqRJoUTkYb07wVnVUW6uEROOGuHs+CsAibUfjRmlCkDoCwGtg4GXtF35rdvIAMrA4sNjO5P1xNuDMze2ydEGgPTBoYeqEgvinQKkSaF8zu38Gjzult4HmxeZ2Ae6xDDwIOBaQPDE/YNfJIQWYVISuFQYy49UJFORXp1ieQAZ5xT7mBg2sBAY+CsBQ9MIXJI4USkIf17wVmrIp0ukYCzLjgLzkowYe1HY0z87q8dJn5mIBHR9H/0AYoYEYixH5B1AAAAAElFTkSuQmCC"
             width={44}
           />
           <div className="flex flex-col">
-            <h2 className="h2-bold">Photto.</h2>
+            <h2 className="h2-bold">Photto</h2>
             <p className="px-[2px] tiny-medium text-light-3 mt-[-4px]">
               by Shubham
             </p>
@@ -46,15 +46,13 @@ const LeftSidebar = () => {
           </div>
         </Link>
 
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 border-t border-dark-4">
           {sidebarLinks.map((link: INavLink) => {
             const isActive = pathname === link.route;
             return (
               <li
                 key={link.route}
-                className={`leftsidebar-link  group ${
-                  isActive && "bg-primary-500"
-                }`}
+                className={`leftsidebar-link  group ${isActive && "bg-dark-3"}`}
               >
                 <NavLink
                   to={link.route}
@@ -67,7 +65,7 @@ const LeftSidebar = () => {
                       isActive && "invert-white"
                     } `}
                   />
-                  {link.label} 
+                  {link.label}
                 </NavLink>
               </li>
             );
