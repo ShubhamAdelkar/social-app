@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import Loader from "@/components/ui/shared/Loader";
 import PostStats from "@/components/ui/shared/PostStats";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
 import { multiFormatDateString } from "@/lib/utils";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useParams } from "react-router-dom";
 
 const PostDetails = () => {
@@ -15,37 +15,61 @@ const PostDetails = () => {
 
   return (
     <div className="post_details-container">
+      <div className="post_details-card">
+        <iframe
+          className=""
+          src="https://open.spotify.com/embed/track/7MXVkk9YMctZqd1Srtv4MB?utm_source=generator"
+          width="100%"
+          height="152"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
       {isPending ? (
-        <Loader />
+        <ul className="flex flex-col flex-1 gap-0 w-full">
+          {Array.from({ length: 1 }).map((_, index) => (
+            <li key={index} className="flex justify-center w-full">
+              <div className="placeholder-post_details"></div>
+            </li>
+          ))}
+        </ul>
       ) : (
         <div className="post_details-card">
-          <img src={post?.imageUrl} alt="post" className="post_details-img" />
+          <h3 className="h3-bold md:h2-bold text-left w-full">
+            {post?.creator.name}'s Post
+          </h3>
+          <LazyLoadImage
+            src={post?.imageUrl}
+            alt="post"
+            effect="blur"
+            className="post_details-img"
+          />
           <div className="post_details-info">
             <div className="flex-between w-full">
               <Link
                 to={`/profile/${post?.creator.$id}`}
                 className="flex items-center gap-2"
               >
-                <img
+                <LazyLoadImage
                   src={
                     post?.creator?.imageUrl ||
                     "/assets/icons/profile-placeholder.svg"
                   }
+                  effect="blur"
                   alt="creator"
-                  className="rounded-full w-10 lg:h-11 lg:w-11"
+                  className="rounded-full w-10 lg:h-14 lg:w-14"
                 />
 
                 <div className="flex flex-col">
                   <p className="base-medium lg:body-bold text-light-1">
                     {post?.creator.name}
                   </p>
-                  <div className="flex-start gap-1 text-light-3">
-                    <p className="subtle-semibold  lg:small-regular text-light-4">
-                      {multiFormatDateString(post?.$createdAt)}
-                    </p>
-                    •
+                  <div className="flex flex-col gap-1 text-light-3">
                     <p className="subtle-semibold lg:small-regular">
                       {post?.location}
+                    </p>
+                    <p className="tiny-medium lg:subtle-semibold text-light-4">
+                      {multiFormatDateString(post?.$createdAt)}
                     </p>
                   </div>
                 </div>
@@ -84,7 +108,7 @@ const PostDetails = () => {
               <p>{post?.caption}</p>
               <ul className="flex gap-1.5">
                 {post?.tags.map((tag: string) => (
-                  <li key={tag} className="text-light-3">
+                  <li key={tag} className="text-light-4">
                     #{tag}
                   </li>
                 ))}
