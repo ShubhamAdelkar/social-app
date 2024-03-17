@@ -140,7 +140,7 @@
 
   /* Home */
   .home-container {
-    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-1 px-4 md:px-8 lg:p-4 custom-scrollbar;
+    @apply flex flex-col flex-1 items-center overflow-scroll py-2 px-2 md:px-0 lg:p-4 custom-scrollbar;
   }
 
   .home-posts {
@@ -153,19 +153,24 @@
 
   /* Post Details */
   .post_details-container {
-    @apply flex flex-col flex-1 gap-10 overflow-scroll py-10 px-5 md:p-14 custom-scrollbar items-center;
+    @apply flex flex-col flex-1 gap-4 overflow-scroll py-8 px-2 md:p-8 custom-scrollbar items-center mb-10 xl:mb-0 lg:mb-0 md:mb-0;
   }
 
   .post_details-card {
-    @apply bg-dark-2 w-full max-w-5xl rounded-[30px] flex-col flex xl:flex-row border border-dark-4 xl:rounded-l-[24px];
+    @apply w-full max-w-xl flex-col flex border-b border-dark-4 gap-4;
   }
 
   .post_details-img {
-    @apply h-80 lg:h-[500px] xl:w-[48%] rounded-t-[30px] xl:rounded-l-[24px] xl:rounded-tr-none object-cover bg-dark-1;
+    @apply bg-dark-1
+    w-full rounded-[1px] object-cover mb-0 border border-dark-4;
+  }
+
+  .placeholder-post_details {
+    @apply w-full max-w-xl flex-col flex border-b border-dark-4 gap-4 bg-dark-3 animate-pulse min-h-[576px];
   }
 
   .post_details-info {
-    @apply bg-dark-2 flex flex-col gap-5 lg:gap-7 flex-1 items-start p-8 rounded-[30px];
+    @apply flex flex-col gap-5 lg:gap-5 flex-1 items-start py-6 px-4;
   }
 
   .post_details-delete_btn {
@@ -192,7 +197,7 @@
 
   /* Bottom bar */
   .bottom-bar {
-    @apply z-50 flex-between w-full fixed bottom-0 bg-dark-2 px-6 py-2 md:hidden backdrop-saturate-100 backdrop-blur-2xl bg-transparent;
+    @apply z-50 flex-between w-full fixed bottom-0 border border-dark-4 bg-dark-2 px-[19px] py-[8px] md:hidden backdrop-saturate-100 backdrop-blur-2xl;
   }
 
   /* File uploader */
@@ -227,16 +232,16 @@
   }
 
   .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
+    @apply rounded-[6px] base-medium transition hover:scale-105;
   }
 
   /* Post Card */
 
   .post-card {
-    @apply bg-dark-2 rounded-xl border border-dark-4 p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px];
+    @apply bg-dark-1 rounded-[2px] border-b border-dark-4 w-full max-w-screen-sm lg:w-[550px] pb-3;
   }
   .placeholder-post-card {
-    @apply flex bg-dark-2 rounded-xl p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px] animate-pulse min-h-[600px] text-slate-800 items-center;
+    @apply flex bg-dark-3 p-5 lg:p-6 w-full max-w-screen-sm lg:w-[550px] animate-pulse min-h-[550px] text-slate-800 items-center;
   }
 
   .placeholder-add {
@@ -244,7 +249,7 @@
   }
 
   .post-card_img {
-    @apply w-full rounded-[8px] object-cover mb-5;
+    @apply w-full rounded-[1px] object-cover mb-4 border border-dark-4;
   }
 
   /* Topbar */
@@ -270,11 +275,11 @@
   }
 
   .shad-input {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-3 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   .shad-textarea {
-    @apply h-36 bg-dark-3 rounded-xl  placeholder:text-light-3 border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-36 bg-dark-3 rounded-xl  placeholder:text-light-4 border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   /* Button */
